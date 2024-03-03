@@ -23,16 +23,54 @@
             <label for="periood">Periood kuudes</label>
             <input id="periood" type="number" min="0" placeholder="0" />
         </div>
-        <button type="button" onclick='Calculate(["algsumma", "intressimaar", "periood", "loppsumma", "intressisumma"])'>Arvuta</button>
+        <div title="Haldus või muu lisatasu.">
+            <label for="lisatasu">Hooldustasu</label>
+            <input id="lisatasu" type="number" min="0" placeholder="0" />
+        </div>
+        <button type="button"
+            onclick='Calculate({
+                    algsumma : "algsumma",
+                    intressimaar : "intressimaar",
+                    periood : "periood",
+                    loppsumma : "loppsumma",
+                    intressisumma : "intressisumma",
+                    lisatasu : "lisatasu",
+                    kogulisatasu : "kogulisatasu",
+                    algsumma2 : "algsumma2",
+                    vahe : "vahe"
+                })'>
+            Arvuta
+        </button >
+        
         <hr>
+        <h2>Laenusummalt</h2>
+        <div>
+            <label for="algsumma2">Algsumma</label>
+            <input id="algsumma2" type="text" placeholder="0" />
+        </div>
         <div title="Lõppsumma">
             <label for="loppsumma">Lõppsumma</label>
-            <input id="loppsumma" type="number" min="0" placeholder="0" />
+            <input id="loppsumma" type="text" placeholder="0" />
         </div>
-        <div title="Algsumma ja lõppsumma vahe.">
+        <br><br>
+        <div title="ALgsumma ja lõppsumma vahe.">
+            <label for="vahe">Vahe</label>
+            <input id="vahe" type="text" placeholder="0" />
+        </div>
+
+        =
+        <div title="Algsumma ja lõppsumma vahe ehk intresside kogusumma.">
             <label for="intressisumma">Intresside kogusumma</label>
-            <input id="intressisumma" type="number" min="0" placeholder="0" />
+            <input id="intressisumma" type="text" placeholder="0" />
         </div>
+        +
+        <div title="Lisatasude summa">
+            <label for="kogulisatasu">Lisatasude kogusumma</label>
+            <input id="kogulisatasu" type="text" placeholder="0" />
+        </div>
+
+        <hr>
+        <h2>Laenujäägilt</h2>
     </div>
 </body>
 </html>
