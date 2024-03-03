@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intressi kalkulaator</title>
+
+    <link href="./css.css" rel="stylesheet">
+    <script src="./interest-calculator.js"></script>
 </head>
 <body>
     <h1>Finantside laenajate intressi kalkulaator</h1>
-    <div>
-        <input type="number" min="0" />
+    <div title="Algsumma, mida soovitakse teenuspakkujalt saada ja mille pealt alustatakse intressi arvestama.">
+        <div>
+            <label for="algsumma">Algsumma</label>
+            <input id="algsumma" type="number" min="0" placeholder="0" />
+        </div>
+        <div title="Intressimäär.">
+            <label for="intressimaar">Intressimäär</label>
+            <input id="intressimaar" type="number" min="0" placeholder="0" />
+        </div>
+        <div title="Periood kuudes.">
+            <label for="periood">Periood kuudes</label>
+            <input id="periood" type="number" min="0" placeholder="0" />
+        </div>
+        <button type="button" onclick='Calculate(["algsumma", "intressimaar", "periood", "loppsumma", "intressisumma"])'>Arvuta</button>
+        <hr>
+        <div title="Lõppsumma">
+            <label for="loppsumma">Lõppsumma</label>
+            <input id="loppsumma" type="number" min="0" placeholder="0" />
+        </div>
+        <div title="Algsumma ja lõppsumma vahe.">
+            <label for="intressisumma">Intresside kogusumma</label>
+            <input id="intressisumma" type="number" min="0" placeholder="0" />
+        </div>
     </div>
 </body>
 </html>
