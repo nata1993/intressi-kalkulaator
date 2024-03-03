@@ -1,24 +1,22 @@
 function Calculate(id) {
     // Laenusummalt intressi arvutamine
-    let init = Number(document.getElementById(id.algsumma).value);                      // algne summa
-    let interest = Number(document.getElementById(id.intressimaar).value / 100);        // intressimäär
-    let timespan = Number(document.getElementById(id.periood).value);                   // ajavahemik kuudes
-    let additions = Number(document.getElementById(id.lisatasu).value);                 // igakuine lisatasu/hooldustasu
-    let total_interest = 0;
+    let algsumma = Number(document.getElementById(id.algsumma).value);                 // algne summa
+    let intress = Number(document.getElementById(id.intressimaar).value / 100);        // intressimäär
+    let ajavahemik = Number(document.getElementById(id.periood).value);                // ajavahemik kuudes
+    let lepingutasu = Number(document.getElementById(id.lepingutasu).value);           // ajavahemik kuudes
+    let lisatasu = Number(document.getElementById(id.lisatasu).value);                 // igakuine lisatasu/hooldustasu
 
-    let total = (init * interest ) / timespan;
-    total_interest = total * timespan;
+    let igakuine_intress = (algsumma * intress ) / ajavahemik;
+    let koguintress = igakuine_intress * ajavahemik;
+    let kogulisatasud = lisatasu * ajavahemik;
+    let kogusumma = algsumma + koguintress + kogulisatasud;
 
-    let total_additions = additions * timespan;
+    document.getElementById(id.algsumma2).value = algsumma;
+    document.getElementById(id.loppsumma).value = kogusumma;
+    document.getElementById(id.intressisumma).value = koguintress;
+    document.getElementById(id.kogulisatasu).value = kogulisatasud;
 
-    let full_total = init + total_interest + total_additions;
-
-    document.getElementById(id.algsumma2).value = init;
-    document.getElementById(id.loppsumma).value = full_total
-    document.getElementById(id.intressisumma).value = total_interest;
-    document.getElementById(id.kogulisatasu).value = total_additions;
-
-    document.getElementById(id.vahe).value = (full_total - init).toFixed(2);
+    document.getElementById(id.vahe).value = (kogusumma - algsumma).toFixed(2);
 
     // Laenujäägilt intressi arvutamine
 }
