@@ -1,3 +1,16 @@
 body {
     background-color: #AAA;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 1;
+}
+.container-item label{
+    grid-column-start: 1;
+}
+.container-item input {
+    grid-column-end: 2;
 }

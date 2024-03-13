@@ -11,71 +11,84 @@
 <body>
     <h1>Finantside laenajate intressi kalkulaator</h1>
     <div title="Algsumma, mida soovitakse teenuspakkujalt saada ja mille pealt alustatakse intressi arvestama.">
-        <div>
-            <label for="algsumma">Algsumma</label>
-            <input id="algsumma" type="number" min="0" placeholder="0" />
+        <div class="container">
+            <div class="container-item">
+                <label for="algsumma">Algsumma</label>
+                <input id="algsumma" type="number" min="0" placeholder="0" />
+            </div>
+            <div class="container-item" title="Intressimäär.">
+                <label for="intressimaar">Intressimäär</label>
+                <input id="intressimaar" type="number" min="0" placeholder="0" />
+            </div>
+            <div class="container-item" title="Periood kuudes.">
+                <label for="periood">Periood kuudes</label>
+                <input id="periood" type="number" min="0" placeholder="0" />
+            </div>
+            <div class="container-item">
+                <label for="lepingutasu">Lepingutasu</label>
+                <input id="lepingutasu" type="number" min="0" placeholder="0" />
+            </div>
+            <div class="container-item" title="Haldus või muu lisatasu.">
+                <label for="lisatasu">Hooldustasu</label>
+                <input id="lisatasu" type="number" min="0" placeholder="0" />
+            </div>
+            <button type="button" onclick='Calculate()'>Arvuta</button >
         </div>
-        <div title="Intressimäär.">
-            <label for="intressimaar">Intressimäär</label>
-            <input id="intressimaar" type="number" min="0" placeholder="0" />
-        </div>
-        <div title="Periood kuudes.">
-            <label for="periood">Periood kuudes</label>
-            <input id="periood" type="number" min="0" placeholder="0" />
-        </div>
-        <div>
-            <label for="lepingutasu">Lepingutasu</label>
-            <input id="lepingutasu" type="number" min="0" placeholder="0" />
-        </div>
-        <div title="Haldus või muu lisatasu.">
-            <label for="lisatasu">Hooldustasu</label>
-            <input id="lisatasu" type="number" min="0" placeholder="0" />
-        </div>
-        <button type="button"
-            onclick='Calculate({
-                    algsumma : "algsumma",
-                    intressimaar : "intressimaar",
-                    periood : "periood",
-                    loppsumma : "loppsumma",
-                    intressisumma : "intressisumma",
-                    lisatasu : "lisatasu",
-                    kogulisatasu : "kogulisatasu",
-                    algsumma2 : "algsumma2",
-                    vahe : "vahe",
-                    lepingutasu : "lepingutasu"
-                })'>
-            Arvuta
-        </button >
-        
+
         <hr>
         <h2>Laenusummalt</h2>
         <div>
-            <label for="algsumma2">Algsumma</label>
-            <input id="algsumma2" type="text" placeholder="0" />
+            <label for="laenusummalt_algsumma">Algsumma</label>
+            <input id="laenusummalt_algsumma" type="text" placeholder="0" />
         </div>
         <div title="Lõppsumma ehk tagasimakstav kogusumma finantsteenuspakkujale.">
-            <label for="loppsumma">Lõppsumma</label>
-            <input id="loppsumma" type="text" placeholder="0" />
+            <label for="laenusummalt_loppsumma">Lõppsumma</label>
+            <input id="laenusummalt_loppsumma" type="text" placeholder="0" />
         </div>
         <br><br>
         <div title="Algsumma ja lõppsumma vahe.">
-            <label for="vahe">Vahe</label>
-            <input id="vahe" type="text" placeholder="0" />
+            <label for="laenusummalt_vahe">Vahe</label>
+            <input id="laenusummalt_vahe" type="text" placeholder="0" />
         </div>
 
         =
         <div title="Algsumma ja lõppsumma vahe ehk intresside kogusumma.">
-            <label for="intressisumma">Intresside kogusumma</label>
-            <input id="intressisumma" type="text" placeholder="0" />
+            <label for="laenusummalt_intressisumma">Intresside kogusumma</label>
+            <input id="laenusummalt_intressisumma" type="text" placeholder="0" />
         </div>
         +
         <div title="Lisatasude summa.">
-            <label for="kogulisatasu">Lisatasude kogusumma</label>
-            <input id="kogulisatasu" type="text" placeholder="0" />
+            <label for="laenusummalt_kogulisatasu">Lisatasude kogusumma</label>
+            <input id="laenusummalt_kogulisatasu" type="text" placeholder="0" />
         </div>
 
         <hr>
+
         <h2>Laenujäägilt</h2>
+        <div>
+            <label for="laenujäägilt_algsumma">Algsumma</label>
+            <input id="laenujäägilt_algsumma" type="text" placeholder="0" />
+        </div>
+        <div title="Lõppsumma ehk tagasimakstav kogusumma finantsteenuspakkujale.">
+            <label for="laenujäägilt_loppsumma">Lõppsumma</label>
+            <input id="laenujäägilt_loppsumma" type="text" placeholder="0" />
+        </div>
+        <br><br>
+        <div title="Algsumma ja lõppsumma vahe.">
+            <label for="laenujäägilt_vahe">Vahe</label>
+            <input id="laenujäägilt_vahe" type="text" placeholder="0" />
+        </div>
+
+        =
+        <div title="Algsumma ja lõppsumma vahe ehk intresside kogusumma.">
+            <label for="laenujäägilt_intressisumma">Intresside kogusumma</label>
+            <input id="laenujäägilt_intressisumma" type="text" placeholder="0" />
+        </div>
+        +
+        <div title="Lisatasude summa.">
+            <label for="laenujäägilt_kogulisatasu">Lisatasude kogusumma</label>
+            <input id="laenujäägilt_kogulisatasu" type="text" placeholder="0" />
+        </div>
     </div>
 </body>
 </html>
